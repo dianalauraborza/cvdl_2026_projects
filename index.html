@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Vision and Deep Learning (2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+    --ink:#1c1c20;
+    --paper:#f5f5f3;
+    --accent:#3a4a6b;
+    --accent-2:#5a6678;
+    --line:#e0e0db;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Spectral',Georgia,serif;
+    line-height:1.55;
+  }
+  header{
+    text-align:center;
+    padding:72px 24px 36px;
+    border-bottom:1px solid var(--line);
+    max-width:1100px;
+    margin:0 auto;
+  }
+  header .kicker{
+    font-family:'Libre Franklin',system-ui,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--accent);
+    margin-bottom:20px;
+  }
+  header h1{
+    font-family:'Libre Franklin',system-ui,sans-serif;
+    font-weight:700;
+    font-size:clamp(2.2rem,5.5vw,4rem);
+    line-height:1.05;
+    letter-spacing:-.02em;
+  }
+  header p{
+    margin-top:16px;
+    font-size:1.12rem;
+    color:#6a6a72;
+  }
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:50px 24px 90px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    gap:30px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.05);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.1);transform:translateY(-3px)}
+  .card .media{
+    position:relative;
+    background:#ececeb;
+    aspect-ratio:3/4;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .card .media iframe{
+    width:100%;height:100%;border:0;display:block;
+  }
+  .card .media a.poster-overlay{
+    position:absolute;inset:0;display:block;z-index:2;
+  }
+  .no-poster{
+    display:flex;align-items:center;justify-content:center;
+    height:100%;color:#a0a0a6;font-style:italic;text-align:center;padding:20px;
+  }
+  .card .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:6px}
+  .card .num{
+    font-family:'Libre Franklin',system-ui,sans-serif;
+    font-weight:600;
+    color:var(--accent);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .card h2{
+    font-family:'Libre Franklin',system-ui,sans-serif;
+    font-weight:600;
+    font-size:1.28rem;
+    line-height:1.25;
+    margin:4px 0 2px;
+    letter-spacing:-.01em;
+  }
+  .card .author{
+    color:#6a6a72;
+    font-size:1.02rem;
+    margin-bottom:16px;
+  }
+  .btn-row{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Libre Franklin',system-ui,sans-serif;
+    font-weight:600;
+    font-size:.88rem;
+    text-decoration:none;
+    padding:9px 16px;
+    border-radius:6px;
+    border:1px solid transparent;
+    transition:background .15s ease, transform .1s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-video{background:var(--accent);color:#fff}
+  .btn-video:hover{background:#2f3d5a}
+  .btn-poster{background:#fff;color:var(--accent);border-color:var(--line)}
+  .btn-poster:hover{background:#f3f4f7}
+  .btn-video::before{content:"\25B6";font-size:.72em}
+  .btn-poster::after{content:"\2197"}
+  .btn.disabled{background:#f0f0ee;color:#b0b0b6;border-color:var(--line);pointer-events:none}
+  .btn.disabled.btn-video::before{color:#b0b0b6}
+  footer{
+    text-align:center;padding:40px 24px 70px;
+    color:#9a9aa0;border-top:1px solid var(--line);
+    max-width:1100px;margin:0 auto;font-size:.95rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Computer Vision and Deep Learning (2026)</div>
+  <h1>Project Posters</h1>
+  <p>Browse the posters and watch each other presentations.</p>
+</header>
+
+<main id="gallery"></main>
+
+
+
+<script>
+const entries = [
+ {
+    title: "Two stage error detection in egocentric cooking via temporal feature modelling",
+    author: "Darius Constantin Cornescu",
+    posterUrl: "https://drive.google.com/file/d/1cXIt-OkeRjWga8xolWHmGAg-0Z8jsacg/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/16eTl3cfa2HJVpAYATEJ0FVJ_f96O-lkB/view?usp=sharing"
+  },
+  {
+    title: "Deep Learning Approaches for 3D Fractured object reassembly",
+    author: "Andreea Ioana Gheorghe",
+    posterUrl: "https://drive.google.com/file/d/1JrqaxQHnn0DMk1lhdR18lyC6gy2gKE3w/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/1sqGqk9R6N7Fjdhp-kKuoArMA0vpbpAX4/view?usp=sharing"
+  },
+  {
+    title: "Depth estimation [TBD]",
+    author: "Mihai Deaconu",
+    posterUrl: "",
+    videoUrl:  ""
+  },
+  {
+    title: "Zero-Shot Mistake Detection in Egocentric Cooking Videos",
+    author: "Maria Borca and Bogdan Chis",
+    posterUrl: "https://drive.google.com/file/d/1dna9dwRC-3wnia69eCyz_qk5lm6fAko5/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/1dna9dwRC-3wnia69eCyz_qk5lm6fAko5/view?usp=sharing"
+  },
+   {
+    title: "Monocular Depth Estimation",
+    author: "Adrian Ravas",
+    posterUrl: "https://drive.google.com/file/d/1XZYvOAivYIImUm8qx37aFEiMv0w3TaK7/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/1FgVC_590YKM0ui6YE4i8-Dcpi_-2l1ie/view?usp=sharing"
+  },
+ {
+    title: "A 253 K-parameter network beats pretrained PSMNet on Middlebury but is dominated by SGBM + WLS on speed",
+    author: "Tudor Costin Paraschiv",
+    posterUrl: "https://drive.google.com/file/d/1jp83WNra-eM2FV3z8lo1vgOPS8JwEYnk/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/1F8BcHQjBdyV6_OqkVGneWQJBJOEMduV0/view?usp=sharing"
+  },
+   {
+    title: "Blending Visual and Semantic Signals Enables Zero-Shot Detection of Procedural Mistakes in Cooking Videos",
+    author: "Crisan Alexandru and Razvan Bocra",
+    posterUrl: "https://drive.google.com/file/d/1D2AzMiJMhkVmkdgq6vj7PUlYnouMUfIl/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/1rAlkfkDKUIs4j2I1OXwlOfI010cVDnPv/view?usp=sharing"
+  },
+  {
+    title: "Skin Lesion Classification",
+    author: "Patricia Ioana Boros <b>(CS)</b>",
+    posterUrl: "https://drive.google.com/file/d/1L41PD2J3jWyr6eIyu1r1q-YduYWXw71l/view?usp=sharing",
+    videoUrl:  "https://drive.google.com/file/d/1oDGdNoXUPtYvH8EOjXT06YnUzyY_ETTH/view?usp=sharing"
+  }
+];
+
+
+function driveId(url){
+  if(!url) return null;
+  const m = url.match(/\/d\/([^/]+)/) || url.match(/[?&]id=([^&]+)/);
+  return m ? m[1] : null;
+}
+
+const gallery = document.getElementById('gallery');
+
+entries.forEach((e, i) => {
+  const posterId = driveId(e.posterUrl);
+  const videoId  = driveId(e.videoUrl);
+
+  const posterView = posterId ? `https://drive.google.com/file/d/${posterId}/view` : null;
+  const videoView  = videoId  ? `https://drive.google.com/file/d/${videoId}/view`  : null;
+
+  // Poster preview: an embedded PDF thumbnail. Clicking it opens the full PDF.
+  const media = posterId
+    ? `<iframe src="https://drive.google.com/file/d/${posterId}/preview" loading="lazy"></iframe>
+       <a class="poster-overlay" href="${posterView}" target="_blank" rel="noopener" title="Open full poster"></a>`
+    : `<div class="no-poster">No poster yet</div>`;
+
+  const posterBtn = posterView
+    ? `<a class="btn btn-poster" href="${posterView}" target="_blank" rel="noopener">View poster</a>`
+    : `<span class="btn btn-poster disabled">No poster</span>`;
+
+  const videoBtn = videoView
+    ? `<a class="btn btn-video" href="${videoView}" target="_blank" rel="noopener">Watch video</a>`
+    : `<span class="btn btn-video disabled">No video</span>`;
+
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="media">${media}</div>
+    <div class="body">
+      <div class="num">Poster ${String(i+1).padStart(2,'0')}</div>
+      <h2>${e.title}</h2>
+      <div class="author">${e.author}</div>
+      <div class="btn-row">${videoBtn}${posterBtn}</div>
+    </div>`;
+  gallery.appendChild(card);
+});
+</script>
+
+</body>
+</html>
